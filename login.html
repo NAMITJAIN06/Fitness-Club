@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form1Style.css">
+    <title>Login Page</title>
+
+    <script>
+        function formValidate(event){
+            event.preventDefault();
+    
+            var name = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+    
+            if(name === 'admin' && pass === '123456'){
+                window.location.href = 'index.html'; 
+            }
+            else {
+                alert("Incorrect username or password."); 
+            }
+        }
+    </script>
+</head>
+
+<body class="form1Body"  >
+
+    <form onsubmit="formValidate(event)" action="index.html">
+        Username:
+        <input type="text" id="username" name="username" placeholder = "username" autocomplete = "off">
+
+        Password:
+        <input type="password" id="password" name="password" placeholder="password" autocomplete = "off" >
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+</html>
